@@ -39,7 +39,7 @@ Exception: ImageNet-1k aka ILSVRC2012. You'll need to supply your existing local
 ```
 python prepare_training_data.py --project-root . --data-root path\to\dl\dataset --imagenet-root path\to\ILSVRC2012
 ```
-💡 Tip: Use `python any_file.py --help` for more configuration info.\
+💡 Tip: Use `python any_file.py --help` for more configuration info.
 
 This will build the handwriting (overlays included in above) and digital text overlays:
 ```
@@ -51,7 +51,7 @@ Optionally, download and enable ObjectNet MVT for benchmark only (train use is d
 ```
 python prepare_objectnet_mvt.py --project-root . --data-root path\to\dl\dataset
 ```
-💡 Typographic attach benchmarks (RTA-100, SCAM) are included in downloads for model evaluation.
+💡 Typographic attack benchmarks (RTA-100, SCAM) are included in downloads for model evaluation.
 
 ---
 
@@ -340,9 +340,9 @@ Next, open `reproduce_info/configurator.html` to select experiments and export a
 ---
 
 Run the experiments for your json config:
-```
+```
 python reproduce.py run --selection reproduction_selection.json
-```
+```
 💡 The HTML configurator also lets you copy-paste commands for single experiments, e.g. `python reproduce.py run bridge.cross_attention`.
 
 You can also run ALL (warning: huge and takes long).\
