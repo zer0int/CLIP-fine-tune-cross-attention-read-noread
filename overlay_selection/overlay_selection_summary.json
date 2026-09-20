@@ -1,0 +1,38 @@
+{
+  "census_dir": null,
+  "analysis_csv": null,
+  "selection_model": "gmp",
+  "n_candidates": 2000,
+  "n_selected": 512,
+  "selection_geometry": "joint",
+  "selection_geometry_dims": 128,
+  "diversity_weight": 0.72,
+  "readable_high_threshold": 0.61829,
+  "readable_low_threshold": 0.38402625,
+  "english_zipf_min": 1.0,
+  "requested_quotas": {
+    "mature_readable": 231,
+    "mature_weak": 77,
+    "immature_readable": 102,
+    "orthographic_hard": 51,
+    "low_both": 51
+  },
+  "actual_strata": {
+    "mature_readable": 231,
+    "immature_readable": 87,
+    "mature_weak": 77,
+    "orthographic_hard": 50,
+    "low_both": 41,
+    "fallback_fill": 26
+  },
+  "selected_english": 187,
+  "selected_clipese": 325,
+  "selected_mature": 381,
+  "selected_immature": 131,
+  "nearest_selected_cos_mean": 0.46548375487327576,
+  "nearest_selected_cos_p95": 0.6790901929140091,
+  "output_word_file": "overlay_selection/overlay_words_gmp_diverse.txt",
+  "output_metadata_csv": "overlay_selection/overlay_words_gmp_diverse.csv",
+  "note": "Selection and PCA use only cached untampered plain text outputs and ordinary visual readable-minus-pseudoglyph deltas.",
+  "release_note": "Machine-local source paths were removed from the public training package; selection statistics and artifacts are unchanged."
+}

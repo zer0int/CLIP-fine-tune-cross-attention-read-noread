@@ -1,0 +1,19 @@
+transformers
+safetensors
+huggingface_hub
+Pillow
+ftfy
+regex
+tqdm
+numpy
+pandas
+matplotlib
+datasets
+scipy
+colorama
+pyarrow>=18
+# torch, torchvision - via https://pytorch.org/get-started/locally/
+scikit-learn
+umap-learn
+plotly
+adabelief-pytorch

@@ -1,0 +1,1476 @@
+{
+  "schema": 1,
+  "tasks": [
+    {
+      "number": 1,
+      "id": "bridge.cross_attention",
+      "title": "SOURCE / ORTHO / READ / CONTENT bridge",
+      "family": "bridge",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "xattn_full_trained"
+      ],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:bridge_architecture",
+        "sec:results_routing"
+      ],
+      "paper_artifacts": [
+        "fig:bridge_detailed",
+        "fig:bridge_candidate_example"
+      ],
+      "description": "SOURCE/ORTHO/READ/CONTENT maps, contributions and rollouts.",
+      "thumbnail": "bridge_detailed.png",
+      "special_tags": []
+    },
+    {
+      "number": 2,
+      "id": "bridge.backbone_dynamics",
+      "title": "trained-backbone / GIPU dynamics",
+      "family": "bridge",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "gmp_trained_vanilla",
+        "xattn_backbone_no_bridge",
+        "xattn_rn_classic"
+      ],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:mech_native_exchange",
+        "app:early_register_formation"
+      ],
+      "paper_artifacts": [],
+      "description": "Non-interventional backbone/register/workspace dynamics underlying the bridge story.",
+      "thumbnail": "01_native_exchange_by_block.png",
+      "special_tags": []
+    },
+    {
+      "number": 3,
+      "id": "bridge.read_null.hallucinations",
+      "title": "READ/null hallucination controls",
+      "family": "bridge",
+      "tier": "control",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "xattn_full_trained"
+      ],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:results_human_audit",
+        "sec:bridge_architecture"
+      ],
+      "paper_artifacts": [
+        "fig:grounded_reader_and_null (support)"
+      ],
+      "description": "No-text/unsupported-query hallucination and READ/NULL behavior.",
+      "thumbnail": "grounded_null_vs_source.png",
+      "special_tags": []
+    },
+    {
+      "number": 4,
+      "id": "bridge.read_null.tap_transplants",
+      "title": "late-tap READ/null transplants",
+      "family": "bridge",
+      "tier": "control",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "xattn_full_trained"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:bridge_architecture",
+        "sec:results_routing"
+      ],
+      "paper_artifacts": [],
+      "description": "Frozen late-tap transplants test what READ/NULL depends on.",
+      "thumbnail": "grounded_reader_discrimination.png",
+      "special_tags": []
+    },
+    {
+      "number": 5,
+      "id": "bridge.read_null.diagnostic",
+      "title": "raw/calibrated READ/null diagnostics",
+      "family": "bridge",
+      "tier": "control",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "xattn_full_trained"
+      ],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:results_human_audit",
+        "sec:bridge_architecture"
+      ],
+      "paper_artifacts": [
+        "fig:grounded_reader_and_null (support)"
+      ],
+      "description": "Raw/calibrated READ, NULL and RN-attention diagnostics.",
+      "thumbnail": "grounded_reader_discrimination.png",
+      "special_tags": []
+    },
+    {
+      "number": 6,
+      "id": "workspace.broadcast_sinks",
+      "title": "NOP/broadcast sinks: OAI / GmP / trained-backbone comparison",
+      "family": "workspace",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_on_oai_text"
+      ],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:mech_native_exchange",
+        "app:early_register_formation"
+      ],
+      "paper_artifacts": [],
+      "description": "NOP/broadcast-sink census and register-overlap measurements.",
+      "thumbnail": "01_native_exchange_by_block.png",
+      "special_tags": []
+    },
+    {
+      "number": 7,
+      "id": "workspace.broadcast_channel_interventions",
+      "title": "565/650/123 causal channel interventions",
+      "family": "workspace",
+      "tier": "control",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_on_oai_text"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:mech_native_exchange",
+        "sec:conv1_residual_takeover"
+      ],
+      "paper_artifacts": [],
+      "description": "Causal 565/650/123 residual-channel interventions on native broadcast/readout.",
+      "thumbnail": "axis650_write_rms.png",
+      "special_tags": []
+    },
+    {
+      "number": 8,
+      "id": "workspace.cls_register_exchange",
+      "title": "CLS↔register/workspace exchange",
+      "family": "workspace",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_on_oai_text"
+      ],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:mech_native_exchange",
+        "app:early_register_formation"
+      ],
+      "paper_artifacts": [
+        "fig:app_early_mu1_sources"
+      ],
+      "description": "Exact CLS↔register/workspace exchange and early μ1 source attribution.",
+      "thumbnail": "01_native_exchange_by_block.png",
+      "special_tags": []
+    },
+    {
+      "number": 9,
+      "id": "workspace.cls_mu_causal",
+      "title": "CLS↔mu causal 2×2 / RN repeat / slot swap",
+      "family": "workspace",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [
+        "workspace.cls_register_exchange"
+      ],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_on_oai_text",
+        "rn_manual_from_xattn"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:mech_native_exchange",
+        "app:early_register_formation",
+        "app:rn_routing_controls"
+      ],
+      "paper_artifacts": [
+        "fig:app_preb13_register_norm",
+        "fig:app_mlp_precursor",
+        "fig:app_b13_h5_substitution",
+        "fig:app_slot_swap_semantics"
+      ],
+      "description": "Phase-separated CLS read/broadcast lesions, RN repeat and slot-swap causal controls.",
+      "thumbnail": "02_preB13_register_lineage_norm_2x2.png",
+      "special_tags": []
+    },
+    {
+      "number": 10,
+      "id": "workspace.cls_role_surfaces",
+      "title": "CLS/register role-plane surfaces",
+      "family": "workspace",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [
+        "workspace.cls_register_exchange"
+      ],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_on_oai_text",
+        "rn_manual_from_xattn"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": "mu2",
+      "star_label": "★μ2",
+      "paper_sections": [
+        "sec:mech_role_plane",
+        "app:role_plane_controls"
+      ],
+      "paper_artifacts": [
+        "fig:natural_role_plane",
+        "fig:app_rn_role_plane_surfaces"
+      ],
+      "description": "Fixed μ1/μ2 role-plane surfaces and controlled CLS/RN displacement.",
+      "thumbnail": "natural_role_plane.png",
+      "special_tags": [
+        "PLY"
+      ]
+    },
+    {
+      "number": 11,
+      "id": "workspace.qk_role_gates.scan",
+      "title": "late Q/K role-gate scan",
+      "family": "workspace",
+      "tier": "control",
+      "kind": "gpu",
+      "deps": [
+        "workspace.cls_register_exchange"
+      ],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_on_oai_text"
+      ],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "app:b22_qk_controls"
+      ],
+      "paper_artifacts": [],
+      "description": "Late Q/K gate-gradient scan projected into the role plane.",
+      "thumbnail": "forced_b22_samehead_comparison.png",
+      "special_tags": []
+    },
+    {
+      "number": 12,
+      "id": "workspace.qk_role_gates.same_heads",
+      "title": "fixed B22 same-head Q/K control",
+      "family": "workspace",
+      "tier": "control",
+      "kind": "gpu",
+      "deps": [
+        "workspace.cls_register_exchange"
+      ],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_on_oai_text"
+      ],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "app:b22_qk_controls"
+      ],
+      "paper_artifacts": [
+        "fig:app_b22_samehead"
+      ],
+      "description": "Forced same-head B22 Q/K comparison across backbones.",
+      "thumbnail": "forced_b22_samehead_comparison.png",
+      "special_tags": []
+    },
+    {
+      "number": 13,
+      "id": "workspace.register_geometry.secondary",
+      "title": "paired secondary register/workspace geometry",
+      "family": "workspace",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "gmp_trained_vanilla",
+        "xattn_visual_stripped"
+      ],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:mech_training_reorganizes",
+        "app:late_workspace_geometry"
+      ],
+      "paper_artifacts": [
+        "fig:secondary_mode_crossfit_main"
+      ],
+      "description": "Cross-fitted secondary register/workspace occupancy geometry.",
+      "thumbnail": "secondary_mode_crossfit.png",
+      "special_tags": []
+    },
+    {
+      "number": 14,
+      "id": "workspace.register_geometry.grad_attention",
+      "title": "late register attribution trajectory",
+      "family": "workspace",
+      "tier": "control",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "gmp_trained_vanilla",
+        "xattn_visual_stripped"
+      ],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:mech_training_reorganizes"
+      ],
+      "paper_artifacts": [
+        "fig:late_causal_trajectory"
+      ],
+      "description": "Grad×attention late attribution trajectory; diagnostic rather than ablation.",
+      "thumbnail": "06_paper_trajectory_summary.png",
+      "special_tags": []
+    },
+    {
+      "number": 15,
+      "id": "workspace.register_geometry.principal_angles",
+      "title": "B20–B22 residual-subspace principal angles",
+      "family": "workspace",
+      "tier": "canonical",
+      "kind": "cpu",
+      "deps": [
+        "workspace.register_geometry.secondary"
+      ],
+      "selectable": true,
+      "models": [],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "app:late_workspace_geometry"
+      ],
+      "paper_artifacts": [
+        "fig:app_residual_principal_angles",
+        "fig:app_residual_temporal_alignment",
+        "fig:app_attack_factorization"
+      ],
+      "description": "Post-PC1 B20–B22 residual-subspace alignment and factorization.",
+      "thumbnail": "residual_subspace_principal_angles_b20_b22.png",
+      "special_tags": []
+    },
+    {
+      "number": 16,
+      "id": "workspace.register_cache_transport",
+      "title": "B12→B13 register/cache transport vs RN",
+      "family": "workspace",
+      "tier": "control",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "xattn_full_trained"
+      ],
+      "experiment_type": "M/I",
+      "type_label": "[M/I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:mech_rn_address_payload",
+        "app:rn_routing_controls"
+      ],
+      "paper_artifacts": [],
+      "description": "B12 register-tail → B13 cache transport measured with RN off/on source competition.",
+      "thumbnail": "fig1_b13_address_and_payload.png",
+      "special_tags": []
+    },
+    {
+      "number": 17,
+      "id": "workspace.rta_head_population",
+      "title": "RTA head-population RN factorial / OV motifs",
+      "family": "workspace",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [
+        "workspace.cls_register_exchange"
+      ],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_on_oai_text",
+        "rn_manual_from_xattn"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": "mu2",
+      "star_label": "★μ2",
+      "paper_sections": [
+        "sec:mech_role_plane",
+        "app:role_plane_controls"
+      ],
+      "paper_artifacts": [
+        "fig:app_mu2_full_clean",
+        "fig:app_mu2_rta_rn_full",
+        "fig:app_mu2_synth_rn_full"
+      ],
+      "description": "Dataset-scale all-head μ2 slider plus RN factorial and OV/write motifs.",
+      "thumbnail": "B13_NoRTA_vs_RTA_vs_RTA_RN.png",
+      "special_tags": []
+    },
+    {
+      "number": 18,
+      "id": "workspace.rta_head_contact_sheets",
+      "title": "cached RN motif contact sheets",
+      "family": "workspace",
+      "tier": "figure",
+      "kind": "cpu",
+      "deps": [
+        "workspace.rta_head_population"
+      ],
+      "selectable": true,
+      "models": [],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": "mu2",
+      "star_label": "★μ2",
+      "paper_sections": [
+        "app:role_plane_controls"
+      ],
+      "paper_artifacts": [
+        "fig:app_changed_motif_rta",
+        "fig:app_changed_motif_synth"
+      ],
+      "description": "Figure/postprocess task for μ2/RN head-motif changes.",
+      "thumbnail": "changed_primary_motif_heads_RTA.png",
+      "special_tags": []
+    },
+    {
+      "number": 19,
+      "id": "workspace.single_image.example",
+      "title": "single-image CLS/register atlas",
+      "family": "workspace",
+      "tier": "control",
+      "kind": "gpu",
+      "deps": [
+        "workspace.cls_register_exchange"
+      ],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_on_oai_text",
+        "rn_manual_from_xattn"
+      ],
+      "experiment_type": "M/I",
+      "type_label": "[M/I]",
+      "intervention_family": "mu2",
+      "star_label": "★μ2",
+      "paper_sections": [
+        "sec:mech_native_exchange",
+        "sec:mech_role_plane"
+      ],
+      "paper_artifacts": [
+        "fig:native_exchange_by_block"
+      ],
+      "description": "Single-image native exchange atlas plus blockwise μ2 steering sweeps.",
+      "thumbnail": "01_native_exchange_by_block.png",
+      "special_tags": []
+    },
+    {
+      "number": 20,
+      "id": "workspace.single_image.motifs",
+      "title": "single-image all-head motif catalogue",
+      "family": "workspace",
+      "tier": "control",
+      "kind": "gpu",
+      "deps": [
+        "workspace.cls_register_exchange"
+      ],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_on_oai_text",
+        "rn_manual_from_xattn"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": "mu2",
+      "star_label": "★μ2",
+      "paper_sections": [
+        "sec:mech_role_plane",
+        "app:role_plane_controls"
+      ],
+      "paper_artifacts": [
+        "fig:mu2_b13_families",
+        "tab:mu2_sign_grammar (support)"
+      ],
+      "description": "All-block/all-head μ2-slider response motif catalogue.",
+      "thumbnail": "mu2_slider_response_b13.png",
+      "special_tags": []
+    },
+    {
+      "number": 21,
+      "id": "workspace.text_cls_trajectory",
+      "title": "exact TEXT→CLS OV/write trajectory",
+      "family": "workspace",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_on_oai_text",
+        "rn_manual_from_xattn"
+      ],
+      "experiment_type": "M/I",
+      "type_label": "[M/I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:mech_native_exchange"
+      ],
+      "paper_artifacts": [
+        "fig:text_cls_write",
+        "fig:rn_text_cls_effect"
+      ],
+      "description": "Exact TEXT→CLS OV/write trajectory across models and RN states.",
+      "thumbnail": "text_to_cls_exact_ov_write_trajectory.png",
+      "special_tags": []
+    },
+    {
+      "number": 22,
+      "id": "rn.control_mechanism",
+      "title": "synthetic single-block RN steering mechanism",
+      "family": "rn",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "xattn_full_trained"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:mech_rn_address_payload",
+        "sec:mech_rn_lowrank"
+      ],
+      "paper_artifacts": [
+        "fig:rn_address_payload",
+        "fig:rn_lowrank_pulse (via figures.rn_mechanism)"
+      ],
+      "description": "Single-block RN source substitution, active-write and low-rank sufficiency/necessity mechanism.",
+      "thumbnail": "fig1_b13_address_and_payload.png",
+      "special_tags": []
+    },
+    {
+      "number": 23,
+      "id": "rn.control_knob",
+      "title": "multilingual RN control-knob suite",
+      "family": "rn",
+      "tier": "control",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "xattn_full_trained"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": "rn_surface",
+      "star_label": "★RNsurf",
+      "paper_sections": [
+        "app:rn_lowrank_controls"
+      ],
+      "paper_artifacts": [
+        "fig:app_rn_control_knobs"
+      ],
+      "description": "Continuous rank-1/rank-4 RN control-coordinate manipulations.",
+      "thumbnail": "read_null_control_state_rank1_rank4.png",
+      "special_tags": []
+    },
+    {
+      "number": 24,
+      "id": "rn.control_manifold",
+      "title": "RN local control-manifold atlas",
+      "family": "rn",
+      "tier": "control",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "xattn_full_trained"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": "rn_surface",
+      "star_label": "★RNsurf",
+      "paper_sections": [
+        "app:rn_lowrank_controls"
+      ],
+      "paper_artifacts": [],
+      "description": "Local multidimensional RN control-manifold chart and reachable-state geometry.",
+      "thumbnail": "read_null_control_state_trajectory.png",
+      "special_tags": [
+        "PLY"
+      ]
+    },
+    {
+      "number": 25,
+      "id": "rn.control_surfaces",
+      "title": "native multilingual RN control surfaces",
+      "family": "rn",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "xattn_full_trained"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": "rn_surface",
+      "star_label": "★RNsurf",
+      "paper_sections": [
+        "app:rn_lowrank_controls",
+        "app:multilingual_rn_surface"
+      ],
+      "paper_artifacts": [
+        "fig:app_rn_empirical_support",
+        "fig:app_multilingual_read_flow (support)"
+      ],
+      "description": "Native multilingual RN causal surfaces, empirical-support restriction and register-pump controls.",
+      "thumbnail": "empirical_support_ridge.png",
+      "special_tags": [
+        "PLY"
+      ]
+    },
+    {
+      "number": 26,
+      "id": "rn.control_surface_flow_maps",
+      "title": "cached RN surface flow maps / PLY",
+      "family": "rn",
+      "tier": "figure",
+      "kind": "cpu",
+      "deps": [
+        "rn.control_surfaces"
+      ],
+      "selectable": true,
+      "models": [],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": "rn_surface",
+      "star_label": "★RNsurf",
+      "paper_sections": [
+        "app:multilingual_rn_surface"
+      ],
+      "paper_artifacts": [
+        "fig:app_multilingual_read_flow"
+      ],
+      "description": "Cached surface gradients/flow maps and PLY export.",
+      "thumbnail": "read_flow_gradinet.png",
+      "special_tags": [
+        "PLY"
+      ]
+    },
+    {
+      "number": 27,
+      "id": "rn.subspace_alignment",
+      "title": "RN-control PCs vs intact register subspaces",
+      "family": "rn",
+      "tier": "control",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "xattn_full_trained"
+      ],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "app:rn_lowrank_controls"
+      ],
+      "paper_artifacts": [
+        "fig:app_rn_register_overlap"
+      ],
+      "description": "Alignment between RN-control PCs and intact register invariant subspaces.",
+      "thumbnail": "rn_pc_register_subspace_alignment.png",
+      "special_tags": []
+    },
+    {
+      "number": 28,
+      "id": "rn.stash_followup",
+      "title": "RN stash impersonation / B11→B13 follow-up",
+      "family": "rn",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "xattn_full_trained",
+        "oai_vanilla_rn_from_xattn"
+      ],
+      "experiment_type": "M/I",
+      "type_label": "[M/I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:mech_rn_address_payload",
+        "app:rn_routing_controls"
+      ],
+      "paper_artifacts": [
+        "fig:rn_address_payload (support)"
+      ],
+      "description": "RN stash impersonation, native-source substitution and K/V addressing/payload follow-up.",
+      "thumbnail": "fig1_b13_address_and_payload.png",
+      "special_tags": []
+    },
+    {
+      "number": 29,
+      "id": "rn.text_relocation",
+      "title": "SOURCE/PIECE text-evidence relocation after RN",
+      "family": "rn",
+      "tier": "control",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "xattn_full_trained"
+      ],
+      "experiment_type": "M/I",
+      "type_label": "[M/I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:mech_native_exchange",
+        "sec:mech_training_reorganizes"
+      ],
+      "paper_artifacts": [],
+      "description": "Where source-PIECE text evidence moves after RN insertion.",
+      "thumbnail": "paper_rn_effect__all_backbones.png",
+      "special_tags": []
+    },
+    {
+      "number": 30,
+      "id": "rn.bridge_transplant",
+      "title": "bridge/text/visual transplant universality",
+      "family": "rn",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "xattn_full_trained",
+        "bridge_on_oai_vit_oai_text",
+        "bridge_on_oai_vit_trained_text",
+        "bridge_on_trained_vit_oai_text"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": "rn_surface",
+      "star_label": "★RNsurf",
+      "paper_sections": [
+        "sec:mech_rn_transfer",
+        "sec:mech_rn_address_payload",
+        "app:rn_lowrank_controls"
+      ],
+      "paper_artifacts": [],
+      "description": "Visual/text/bridge transplants, pump ablations and same-coordinate RN control surfaces.",
+      "thumbnail": "fig3_shared_geometry_language_readout.png",
+      "special_tags": [
+        "PLY"
+      ]
+    },
+    {
+      "number": 31,
+      "id": "rn.touch_go_transfer",
+      "title": "RN transplant: persistent vs B13 touch-and-go",
+      "family": "rn",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "xattn_full_trained",
+        "rn_touch_go_oai",
+        "rn_touch_go_gmp"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:mech_rn_touch_go"
+      ],
+      "paper_artifacts": [
+        "fig:rn_touch_go_trajectory"
+      ],
+      "description": "Persistent RN versus B13-only touch-and-go transplantation.",
+      "thumbnail": "rn_touch_go_trajectory.png",
+      "special_tags": []
+    },
+    {
+      "number": 32,
+      "id": "figures.role_text_atlas",
+      "title": "role-vs-site text atlas",
+      "family": "figures",
+      "tier": "figure",
+      "kind": "cpu",
+      "deps": [
+        "workspace.rta_head_population"
+      ],
+      "selectable": true,
+      "models": [],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": "mu2",
+      "star_label": "★μ2",
+      "paper_sections": [
+        "sec:mech_role_plane",
+        "app:role_plane_controls"
+      ],
+      "paper_artifacts": [
+        "tab:mu2_sign_grammar",
+        "changed-motif sheets (support)"
+      ],
+      "description": "CPU postprocess tying μ2 role grammar to text-site traffic.",
+      "thumbnail": "changed_primary_motif_heads_RTA.png",
+      "special_tags": []
+    },
+    {
+      "number": 33,
+      "id": "figures.rn_mechanism",
+      "title": "compact RN mechanism paper figures",
+      "family": "figures",
+      "tier": "figure",
+      "kind": "cpu",
+      "deps": [
+        "rn.control_mechanism",
+        "rn.stash_followup",
+        "rn.bridge_transplant"
+      ],
+      "selectable": true,
+      "models": [],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:mech_rn_address_payload",
+        "sec:mech_rn_lowrank"
+      ],
+      "paper_artifacts": [
+        "fig:rn_address_payload",
+        "fig:rn_lowrank_pulse"
+      ],
+      "description": "Cached paper-figure compositor for RN address/payload and low-rank pulse.",
+      "thumbnail": "fig1_b13_address_and_payload.png",
+      "special_tags": []
+    },
+    {
+      "number": 34,
+      "id": "conv1.gpic_manifold",
+      "title": "Conv1 semantic manifold with model-matched GPIC embedding banks",
+      "family": "conv1",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "xattn_full_trained",
+        "oai_vanilla"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": "gpic",
+      "star_label": "★GPIC",
+      "paper_sections": [
+        "sec:conv1_manifold_surfing"
+      ],
+      "paper_artifacts": [
+        "fig:AA_GLOBAL_bullet5__ch0720_FLIP__ch0866_FLIP",
+        "fig:AA_LOCAL_bullet5__ch0720_FLIP__ch0499_FLIP",
+        "fig:AA_typo_exam__ch0720_SHUFFLE__ch0866_FLIP"
+      ],
+      "description": "Conv1 perturbation 'manifold surfing' with model-matched GPIC nearest-neighbor retrieval.",
+      "thumbnail": "AA_GLOBAL_bullet5__ch0720_FLIP__ch0866_FLIP.png",
+      "special_tags": []
+    },
+    {
+      "number": 35,
+      "id": "conv1.xattn_functional_atlas",
+      "title": "x-attn Conv1 functional atlas / culprit and pair discovery",
+      "family": "conv1",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "xattn_full_trained",
+        "oai_vanilla"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:conv1_causal_atlas",
+        "app:conv1_excursion_controls"
+      ],
+      "paper_artifacts": [
+        "tab:conv1_matched_severe",
+        "fig:perturb-conv1-examples",
+        "fig:app_conv1_severe_counts (support)"
+      ],
+      "description": "Seven-condition Conv1 causal atlas, culprit discovery and x-attn displacement manifolds.",
+      "thumbnail": "perturb-conv1-examples.png",
+      "special_tags": []
+    },
+    {
+      "number": 36,
+      "id": "conv1.vanilla_functional_atlas",
+      "title": "vanilla/GmP/bare-xattn Conv1 functional atlas",
+      "family": "conv1",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "gmp_trained_vanilla",
+        "xattn_visual_stripped"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:conv1_causal_atlas",
+        "app:conv1_excursion_controls"
+      ],
+      "paper_artifacts": [
+        "fig:conv1_model_attenuation",
+        "tab:conv1_matched_severe",
+        "fig:app_conv1_severe_counts"
+      ],
+      "description": "Matched Conv1 perturbation atlas for pretrained/GmP/bare-xattn backbones.",
+      "thumbnail": "conv1_final_distance_models.png",
+      "special_tags": []
+    },
+    {
+      "number": 37,
+      "id": "conv1.vanilla_functional_atlas_rn",
+      "title": "vanilla/GmP/bare-xattn Conv1 atlas with transplanted RN",
+      "family": "conv1",
+      "tier": "control",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_stripped",
+        "rn_manual_from_xattn"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:conv1_causal_atlas",
+        "app:conv1_excursion_controls"
+      ],
+      "paper_artifacts": [
+        "tab:app_conv1_rn_portability"
+      ],
+      "description": "Same fixed Conv1 events with transplanted RN across vanilla-family backbones.",
+      "thumbnail": "conv1_severe_event_counts.png",
+      "special_tags": []
+    },
+    {
+      "number": 38,
+      "id": "conv1.residual_axis_lineage",
+      "title": "Conv1 residual-axis lineage / classification",
+      "family": "conv1",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_stripped",
+        "xattn_full_trained"
+      ],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:conv1_residual_takeover",
+        "app:conv1_excursion_controls"
+      ],
+      "paper_artifacts": [
+        "fig:conv1_axis_takeover",
+        "fig:app_conv1_650_write"
+      ],
+      "description": "Depthwise ancestry/takeover of residual coordinates 650, 565 and controls.",
+      "thumbnail": "axis650_register_enrichment.png",
+      "special_tags": []
+    },
+    {
+      "number": 39,
+      "id": "conv1.residual_axis_swap_650_565",
+      "title": "650/565 residual-axis swap sweep",
+      "family": "conv1",
+      "tier": "control",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_stripped",
+        "xattn_full_trained"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:conv1_residual_takeover"
+      ],
+      "paper_artifacts": [
+        "fig:conv1_axis_takeover (swap panel)"
+      ],
+      "description": "Block-local and persistent 650↔565 coordinate-swap interventions.",
+      "thumbnail": "swap_650_565_localization.png",
+      "special_tags": []
+    },
+    {
+      "number": 40,
+      "id": "conv1.residual_axis_lineage_rn",
+      "title": "RN-variant residual-axis lineage / classification",
+      "family": "conv1",
+      "tier": "control",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_stripped",
+        "xattn_full_trained",
+        "rn_manual_from_xattn"
+      ],
+      "experiment_type": "M/I",
+      "type_label": "[M/I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:conv1_residual_takeover"
+      ],
+      "paper_artifacts": [],
+      "description": "Residual-axis lineage repeated with RN variants to locate RN relative to B12 construction.",
+      "thumbnail": "axis650_register_enrichment.png",
+      "special_tags": []
+    },
+    {
+      "number": 41,
+      "id": "conv1.mlp_neuron_discovery",
+      "title": "blind MLP-neuron discovery from residual axes",
+      "family": "conv1",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_stripped",
+        "xattn_full_trained"
+      ],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:conv1_residual_takeover",
+        "app:conv1_excursion_controls"
+      ],
+      "paper_artifacts": [
+        "fig:conv1_blind_register_neurons",
+        "tab:app_conv1_reg_neurons"
+      ],
+      "description": "Blind residual-side recovery of B11/B12 register-neuron populations.",
+      "thumbnail": "blind_register_neuron_recovery.png",
+      "special_tags": []
+    },
+    {
+      "number": 42,
+      "id": "conv1.b20_writeback_neurons",
+      "title": "B20 writeback-neuron discovery",
+      "family": "conv1",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_stripped",
+        "xattn_full_trained"
+      ],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:conv1_b20_writeback",
+        "app:conv1_excursion_controls"
+      ],
+      "paper_artifacts": [
+        "fig:b20_register_neuron_3357 (support)"
+      ],
+      "description": "Blind discovery of sparse B20 register/workspace writeback neurons.",
+      "thumbnail": "b20_register_neuron_3357.png",
+      "special_tags": []
+    },
+    {
+      "number": 43,
+      "id": "conv1.b20_sharpeners_flatteners",
+      "title": "B20 sharpener/flattener subfamilies",
+      "family": "conv1",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [
+        "conv1.b20_writeback_neurons"
+      ],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_stripped",
+        "xattn_full_trained"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:conv1_b20_writeback",
+        "app:conv1_excursion_controls"
+      ],
+      "paper_artifacts": [
+        "fig:app_b20_b21_program",
+        "tab:app_b20_signed_ablation"
+      ],
+      "description": "Signed B20 sharpener/flattener neuron-family ablations and B21 routing effects.",
+      "thumbnail": "b20_b21_head_program.png",
+      "special_tags": []
+    },
+    {
+      "number": 44,
+      "id": "conv1.b20_pushpull_650_715",
+      "title": "B20 650/715 push-pull mediation",
+      "family": "conv1",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [
+        "conv1.b20_sharpeners_flatteners"
+      ],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_visual_stripped",
+        "xattn_full_trained"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:conv1_b20_writeback",
+        "app:conv1_excursion_controls"
+      ],
+      "paper_artifacts": [
+        "fig:app_b20_coordinate_mediation"
+      ],
+      "description": "Coordinate add-back/removal tests for whether 650/715 mediate the B20 actuator packet.",
+      "thumbnail": "b20_coordinate_mediation.png",
+      "special_tags": []
+    },
+    {
+      "number": 45,
+      "id": "conv1.register_allocator_tomography",
+      "title": "Conv1 / positional register-allocator tomography",
+      "family": "conv1",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "oai_vanilla"
+      ],
+      "experiment_type": "I",
+      "type_label": "[I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:conv1_causal_atlas",
+        "sec:conv1_role_allocation"
+      ],
+      "paper_artifacts": [],
+      "description": "Causal Conv1/positional → early-scanner → register-allocation tomography.",
+      "thumbnail": "stimulus-dependent-allocation.png",
+      "special_tags": []
+    },
+    {
+      "number": 46,
+      "id": "conv1.roleplane_texture_rank.head_rank",
+      "title": "all-block head true-rank / rigidity",
+      "family": "conv1",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "oai_vanilla"
+      ],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:conv1_role_allocation",
+        "app:role_allocation_controls"
+      ],
+      "paper_artifacts": [
+        "fig:app_rank_role_emergence"
+      ],
+      "description": "All-block QK true-rank/rigidity and visual-tracker phenotype census.",
+      "thumbnail": "true_rank_vs_role_emergence.png",
+      "special_tags": []
+    },
+    {
+      "number": 47,
+      "id": "conv1.roleplane_texture_rank.texture_inverse",
+      "title": "DTD/math texture role-plane + inverse-LAST",
+      "family": "conv1",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "oai_vanilla"
+      ],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:conv1_role_allocation",
+        "app:role_allocation_controls"
+      ],
+      "paper_artifacts": [
+        "fig:app_register_allocation_texture"
+      ],
+      "description": "DTD/synthetic register allocation, role-plane occupancy and inverse-LAST spectral analysis.",
+      "thumbnail": "dtd_reg_hiddenmu_by_class.png",
+      "special_tags": []
+    },
+    {
+      "number": 48,
+      "id": "conv1.roleplane_texture_rank.compact",
+      "title": "compact role-plane / texture / rank handoff",
+      "family": "conv1",
+      "tier": "figure",
+      "kind": "cpu",
+      "deps": [
+        "conv1.roleplane_texture_rank.head_rank",
+        "conv1.roleplane_texture_rank.texture_inverse"
+      ],
+      "selectable": true,
+      "models": [],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:conv1_role_allocation",
+        "app:role_allocation_controls"
+      ],
+      "paper_artifacts": [
+        "fig:app_rank_role_emergence",
+        "fig:app_register_allocation_texture"
+      ],
+      "description": "CPU postprocess/compact summary of rank, texture and role-allocation results.",
+      "thumbnail": "true_rank_vs_role_emergence.png",
+      "special_tags": []
+    },
+    {
+      "number": 49,
+      "id": "conv1.visualtextual_provenance",
+      "title": "visual/textual provenance + role-plane atlas",
+      "family": "conv1",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_full_trained"
+      ],
+      "experiment_type": "M/I",
+      "type_label": "[M/I]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:text_provenance_geometry",
+        "app:text_provenance_controls"
+      ],
+      "paper_artifacts": [
+        "fig:stimulus-dependent-allocation",
+        "fig:app_b20_background_provenance",
+        "fig:app_role_text_direction",
+        "fig:app_conv1_text_frequency"
+      ],
+      "description": "Visual/text/mix provenance atlas, role-plane removal and causal Conv1 text-channel controls.",
+      "thumbnail": "stimulus-dependent-allocation.png",
+      "special_tags": []
+    },
+    {
+      "number": 50,
+      "id": "conv1.visualtextual_text_direction",
+      "title": "visual/textual text-direction trajectory atlas",
+      "family": "conv1",
+      "tier": "canonical",
+      "kind": "gpu",
+      "deps": [],
+      "selectable": true,
+      "models": [
+        "oai_vanilla",
+        "gmp_trained_vanilla",
+        "xattn_full_trained"
+      ],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:text_provenance_geometry",
+        "app:text_provenance_controls"
+      ],
+      "paper_artifacts": [
+        "fig:text_provenance_depth",
+        "fig:app_final_text_angle_strip",
+        "fig:app_synthetic_text_transfer"
+      ],
+      "description": "Layerwise transferable text-direction trajectory and synthetic generalization.",
+      "thumbnail": "text_provenance_crosscontrast_angle.png",
+      "special_tags": []
+    },
+    {
+      "number": 51,
+      "id": "audit.read_probe_router",
+      "title": "static READ-probe/router checkpoint audit",
+      "family": "audit",
+      "tier": "utility",
+      "kind": "audit",
+      "deps": [],
+      "selectable": false,
+      "models": [],
+      "experiment_type": "M",
+      "type_label": "[M]",
+      "intervention_family": null,
+      "star_label": "",
+      "paper_sections": [
+        "sec:bridge_architecture",
+        "methods trust-router equations"
+      ],
+      "paper_artifacts": [],
+      "description": "Static checkpoint/config audit for optional READ probe and trust-router input width.",
+      "thumbnail": null,
+      "special_tags": []
+    }
+  ]
+}

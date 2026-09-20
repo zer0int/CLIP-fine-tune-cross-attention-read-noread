@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "name": "PIECES grounded-reader lexical and semantic probe bank",
+  "prompt_template": "a photo of a {candidate}",
+  "categories": {
+    "literal_absent_controls": [
+      "tractor",
+      "rotkehlchen",
+      "flugzeug",
+      "airplane",
+      "volcano",
+      "saxophone",
+      "jellyfish",
+      "astronaut",
+      "sonnet",
+      "nebula",
+      "xylophone",
+      "submarine",
+      "harpsichord",
+      "constellation",
+      "trombone",
+      "kangaroo",
+      "zeppelin"
+    ],
+    "german_bias_traps": [
+      "reich",
+      "merkel"
+    ],
+    "semantic_derailment": [
+      "love letter",
+      "meme",
+      "history book",
+      "political speech",
+      "wedding invitation",
+      "newspaper editorial"
+    ],
+    "metatext_concepts": [
+      "text",
+      "typography",
+      "writing",
+      "lettering"
+    ]
+  },
+  "interpretation": {
+    "literal_absent_controls": "Fixed lexical controls verified to have zero substring occurrence in the human WYSIWYG transcriptions and zero exact occurrence as benchmark labels in attachment v1. They are literal-reading negatives, not claims about the depicted scene semantics.",
+    "german_bias_traps": "Bias probes requested specifically to test whether German-looking scene text spuriously raises historically associated German concepts. Do not treat a probe as a literal negative on an image where probe_literal_overlap=true.",
+    "semantic_derailment": "Semantically rich concepts that should not acquire bridge support merely because generic writing is present. Diagnose with NOTEXT, ANY, and forced READ scores; do not score them as benchmark accuracy labels.",
+    "metatext_concepts": "Generic semantic concepts for visible writing. These may appropriately rise under ANY when TEXT_REAL is true, even though the literal word itself need not be printed."
+  },
+  "global_overlap_audit": {
+    "tractor": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "rotkehlchen": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "flugzeug": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "airplane": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "volcano": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "saxophone": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "jellyfish": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "astronaut": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "sonnet": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "nebula": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "xylophone": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "submarine": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "harpsichord": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "constellation": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "trombone": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "kangaroo": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "zeppelin": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "reich": {
+      "human_transcription_substring_hits": 1,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [
+        {
+          "id": "NoSCAM_img_0614",
+          "text": "fur den Lebensmittelbereich geeignet"
+        }
+      ],
+      "example_label_hits": []
+    },
+    "merkel": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "love letter": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "meme": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "history book": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "political speech": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "wedding invitation": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "newspaper editorial": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "text": {
+      "human_transcription_substring_hits": 2,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [
+        {
+          "id": "NoSCAM_img_0221",
+          "text": "Textilien"
+        },
+        {
+          "id": "NoSCAM_img_0442",
+          "text": "TEXT"
+        }
+      ],
+      "example_label_hits": []
+    },
+    "typography": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "writing": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    },
+    "lettering": {
+      "human_transcription_substring_hits": 0,
+      "dataset_label_exact_hits": 0,
+      "example_transcription_hits": [],
+      "example_label_hits": []
+    }
+  }
+}

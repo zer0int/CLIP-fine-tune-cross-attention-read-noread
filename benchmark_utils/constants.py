@@ -1,0 +1,2 @@
+DEFAULT_MODEL_ALIAS = "CLIP-xAttn-ModeMUX"
+DEFAULT_MODEL_PATH = "zer0int/CLIP-ViT-L-14-Cross-Attn-Read-NoRead-ModeMUX"
